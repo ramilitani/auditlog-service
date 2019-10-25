@@ -17,7 +17,7 @@ This token is received when you call the login api.
 
 __Requirements__
 
-  The project must have  the follow tools installed to run:
+  The project require the following tools installed to run:
   - JAVA 8
   - ActiveMQ
   - MongoDB
@@ -28,7 +28,7 @@ __Steps to run the project__
   
   1. Start the MongoDB
   
-  2. Start the ActiveMQ. In the bin folder of the ActiveMQ, type the follow command to run the ActiveMQ
+  2. Start the ActiveMQ. Into the bin folder of the ActiveMQ, type the following command to run it:
       ```bash
          ./activemq start
       ```
@@ -37,14 +37,14 @@ __Steps to run the project__
       ```bash
            mvn clean install
       ```
-  4. Run the follow command in the target folder of the Java project
+  4. Run the following command in the target folder of the Java project
         ```bash
              java -jar auditlog-service-1.0-SNAPSHOT.jar
         ```
   <br/><br/>
-  __Call the API__
+  __Calling the API__
   
-  1. First you must to log in the application
+  1. First, you must to logged in to the application
   
         ```bash
           curl -d '{"login":"test@gmail.com", "password":"test"}' -H "Content-Type: application/json" -X POST localhost:8080/auditlog/login
@@ -53,19 +53,19 @@ __Steps to run the project__
      ```bash
        {"sessaoId":"85370f2e-a320-4bd1-b814-f5ccfb7705a3","login":"test@gmail.com","userId":1}
      ```
-     The sessaoId is the token you must put in the header for every next requests you make.
+     The sessionId is the token you must put in the header for every next request that you do.
      
-  2. To show the audit messages stored in MongoDB for a specific user you should use the follow request:
+  2. To show the audit messages stored in MongoDB for a specific user you should use the following request:
      ```bash
        curl -H "x-auth-token: a8c7c2ad-5265-42e6-bcdd-a2295363cbef" "localhost:8080/auditlog/audit/1?page=0&size=10"
      ```
      The url is this: localhost:8080/auditlog/audit/{userId}?page=0&size=10
      
-  3. To show all the audit messages stored in MongoDB you should use the follow request;
+  3. To show all the audit messages stored in MongoDB you should use the following request;
      ```bash
        curl -H "x-auth-token: a8c7c2ad-5265-42e6-bcdd-a2295363cbef" "localhost:8080/auditlog/audit?page=0&size=10"
      ```
-  4. For the logoff of the application, follow the command above: 
+  4. For the logoff of the application, you should follow the command above: 
      ```bash
        curl -H "x-auth-token: a8c7c2ad-5265-42e6-bcdd-a2295363cbef" "localhost:8080/auditlog/logout"
       ``` 
