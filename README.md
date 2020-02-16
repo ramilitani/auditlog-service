@@ -65,7 +65,7 @@ __Steps to run the project__
      ```bash
        curl -H "x-auth-token: a8c7c2ad-5265-42e6-bcdd-a2295363cbef" "localhost:8080/auditlog/audit?page=0&size=10"
      ```
-  4. For the logoff of the application, you should follow the command above: 
+  4. For the logoff of the application, you should follow the command below: 
      ```bash
        curl -H "x-auth-token: a8c7c2ad-5265-42e6-bcdd-a2295363cbef" "localhost:8080/auditlog/logout"
       ``` 
